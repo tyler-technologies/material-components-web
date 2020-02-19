@@ -21,20 +21,20 @@
 //
 
 @use "sass:math";
-@use "@material/elevation/mixins" as elevation-mixins;
+@use "@tyler-forge/elevation/mixins" as elevation-mixins;
 @use "@material/feature-targeting/functions" as feature-targeting-functions;
 @use "@material/feature-targeting/mixins" as feature-targeting-mixins;
 @use "@material/ripple/mixins" as ripple-mixins;
 @use "@material/rtl/mixins" as rtl-mixins;
-@use "@material/theme/functions" as theme-functions;
-@use "@material/theme/mixins" as theme-mixins;
+@use "@tyler-forge/theme/functions" as theme-functions;
+@use "@tyler-forge/theme/mixins" as theme-mixins;
 @use "@material/touch-target/mixins" as touch-target-mixins;
-@use "@material/typography/mixins" as typography-mixins;
+@use "@tyler-forge/typography/mixins" as typography-mixins;
 @use "@material/shape/mixins" as shape-mixins;
 @use "@material/shape/functions" as shape-functions;
 @use "@material/density/functions" as density-functions;
 @use "./variables";
-@use "@material/elevation/functions" as elevation-functions;
+@use "@tyler-forge/elevation/functions" as elevation-functions;
 
 $ripple-target: ".mdc-button__ripple";
 
@@ -46,6 +46,11 @@ $ripple-target: ".mdc-button__ripple";
 @mixin theme-baseline($query: feature-targeting-functions.all()) {
   .mdc-button {
     @include density(variables.$density-scale, $query: $query);
+  }
+
+  .mdc-button--dense {
+    @include density(-3, $query: $query);
+    height: 1.5rem;
   }
 }
 
@@ -68,7 +73,8 @@ $ripple-target: ".mdc-button__ripple";
     // class, which is loaded separately so the order of CSS definitions is not
     // guaranteed. Therefore, increase specifity by nesting this class to ensure
     // overrides apply.
-    .mdc-button__icon {
+    .mdc-button__icon,
+    .tyl-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         @include icon_;
       }
@@ -82,14 +88,16 @@ $ripple-target: ".mdc-button__ripple";
     @include disabled-ink-color(variables.$disabled-ink-color, $query);
   }
 
-  .mdc-button__label + .mdc-button__icon {
+  .mdc-button__label + .mdc-button__icon,
+  .mdc-button__label + .tyl-button__icon {
     @include feature-targeting-mixins.targets($feat-structure) {
       @include icon-trailing_;
     }
   }
 
   // stylelint-disable-next-line selector-no-qualifying-type
-  svg.mdc-button__icon {
+  svg.mdc-button__icon,
+  svg.tyl-button__icon {
     @include feature-targeting-mixins.targets($feat-structure) {
       @include icon-svg_;
     }
@@ -98,14 +106,16 @@ $ripple-target: ".mdc-button__ripple";
   .mdc-button--raised,
   .mdc-button--unelevated,
   .mdc-button--outlined {
-    .mdc-button__icon {
+    .mdc-button__icon,
+    .tyl-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         // Icons inside contained buttons have different styles due to increased button padding
         @include icon-contained_;
       }
     }
 
-    .mdc-button__label + .mdc-button__icon {
+    .mdc-button__label + .mdc-button__icon,
+    .mdc-button__label + .tyl-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         @include icon-contained-trailing_;
       }
@@ -230,6 +240,7 @@ $ripple-target: ".mdc-button__ripple";
 @mixin disabled-outline-color($color, $query: feature-targeting-functions.all()) {
   &:disabled {
     @include outline-color_($color, $query: $query);
+    @include theme-mixins.prop(color, text-disabled-on-light);
   }
 }
 
@@ -420,8 +431,10 @@ $query: feature-targeting-functions.all()) {
     -webkit-appearance: none;
     // Even though `visible` is the default, IE 11 computes the property as
     // `hidden` in some cases, unless it's explicitly defined here.
-    overflow: visible;
+    // overflow: visible;
+    overflow: hidden;
     vertical-align: middle;
+    text-transform: none;
   }
 
   &::-moz-focus-inner {
@@ -556,7 +569,8 @@ $query: feature-targeting-functions.all()) {
 @mixin icon-color_($color, $query: feature-targeting-functions.all()) {
   $feat-color: feature-targeting-functions.create-target($query, color);
 
-  .mdc-button__icon {
+  .mdc-button__icon,
+  .tyl-button__icon {
     @include feature-targeting-mixins.targets($feat-color) {
       @include theme-mixins.prop(color, $color);
     }

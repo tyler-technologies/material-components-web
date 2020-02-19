@@ -1,0 +1,29 @@
+@use './color-palette' as colors;
+
+$success: #2e7d32 !default;
+$success-text: #ffffff !default;
+$success-muted: #a5d6a7 !default;
+$success-text-muted: #1b5e20 !default;
+
+$warning: #d14900 !default;
+$warning-text: #ffffff !default;
+$warning-muted: #ffdba6 !default;
+$warning-text-muted: #a03a03 !default;
+
+$danger: #b00020 !default;
+$danger-text: #ffffff !default;
+$danger-muted: #ffcdd2 !default;
+$danger-text-muted: #a22d0e !default;
+$danger-dark: #cf6679 !default;
+
+$info-primary: #1a237e !default;
+$info-primary-text: #ffffff !default;
+$info-primary-muted: #bbdefb !default;
+$info-primary-text-muted: #1a237e !default;
+
+$info-secondary: #000000 !default;
+$info-secondary-text: #ffffff !default;
+$info-secondary-muted: #e0e0e0 !default;
+$info-secondary-text-muted: #000000 !default;
+
+$info: colors.$grey-800 !default;

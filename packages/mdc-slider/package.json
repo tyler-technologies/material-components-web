@@ -1,5 +1,5 @@
 {
-  "name": "@material/slider",
+  "name": "@tyler-forge/slider",
   "version": "5.0.0",
   "description": "The Material Components for the web slider component",
   "main": "dist/mdc.slider.js",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web.git",
+    "url": "https://github.com/tyler-technologies/material-components-web.git",
     "directory": "packages/mdc-slider"
   },
   "keywords": [
@@ -26,8 +26,8 @@
     "@material/dom": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
     "@material/rtl": "^5.0.0",
-    "@material/theme": "^5.0.0",
-    "@material/typography": "^5.0.0",
+    "@tyler-forge/theme": "^5.0.0",
+    "@tyler-forge/typography": "^5.0.0",
     "tslib": "^1.9.3"
   }
 }

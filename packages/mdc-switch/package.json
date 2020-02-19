@@ -1,5 +1,5 @@
 {
-  "name": "@material/switch",
+  "name": "@tyler-forge/switch",
   "description": "The Material Components for the web switch component",
   "version": "5.0.0",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "types": "dist/mdc.switch.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web.git",
+    "url": "https://github.com/tyler-technologies/material-components-web.git",
     "directory": "packages/mdc-switch"
   },
   "dependencies": {
@@ -22,11 +22,11 @@
     "@material/base": "^5.0.0",
     "@material/density": "^5.0.0",
     "@material/dom": "^5.0.0",
-    "@material/elevation": "^5.0.0",
+    "@tyler-forge/elevation": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
     "@material/ripple": "^5.0.0",
     "@material/rtl": "^5.0.0",
-    "@material/theme": "^5.0.0",
+    "@tyler-forge/theme": "^5.0.0",
     "tslib": "^1.9.3"
   },
   "publishConfig": {

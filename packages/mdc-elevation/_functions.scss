@@ -20,7 +20,45 @@
 // THE SOFTWARE.
 //
 
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
 @use "./variables";
+@use "@tyler-forge/theme/variables" as theme-variables;
+// @use "@material/feature-targeting/functions" as feature-targeting-functions;
+
+///
+/// Sets the elevation values.
+///
+/// @param {String} $z-value - The logical elevation levels. Must be between 0 and 24.
+/// @param {String} $color - The color of the elevation shadow.
+// If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use
+// $opacity-boost.
+/// @return {String}
+///
+@function elevation-values($z-value, $color: variables.$baseline-color, $opacity-boost: 0) {
+  @if meta.type-of($z-value) != number or not math.is-unitless($z-value) {
+    @error '$z-value must be a unitless number, but received "#{$z-value}"';
+  }
+
+  @if $z-value < 0 or $z-value > 24 {
+    @error '$z-value must be between 0 and 24, but received "#{$z-value}"';
+  }
+
+  // $feat-color: feature-targeting-functions.create-target($query, color);
+
+  $color: theme-variables.prop-value($color);
+
+  $umbra-z-value: map.get(variables.$umbra-map, $z-value);
+  $penumbra-z-value: map.get(variables.$penumbra-map, $z-value);
+  $ambient-z-value: map.get(variables.$ambient-map, $z-value);
+
+  $umbra-color: rgba($color, variables.$umbra-opacity + $opacity-boost);
+  $penumbra-color: rgba($color, variables.$penumbra-opacity + $opacity-boost);
+  $ambient-color: rgba($color, variables.$ambient-opacity + $opacity-boost);
+
+  @return #{$umbra-z-value} #{$umbra-color}, #{$penumbra-z-value} #{$penumbra-color}, #{$ambient-z-value} #{$ambient-color};
+}
 
 ///
 /// Sets the elevation transition value.

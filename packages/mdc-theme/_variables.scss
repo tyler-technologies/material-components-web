@@ -23,6 +23,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "./functions";
+@use "./status-palette";
 
 //
 // Main theme colors for your brand.
@@ -30,15 +31,20 @@
 // If you're a user customizing your color scheme in SASS, these are probably the only variables you need to change.
 //
 
-$primary: #6200ee !default; // baseline purple, 500 tone
+$primary: #3f51b5 !default; // baseline indigo, 500 tone
 $on-primary: if(functions.contrast-tone($primary) == "dark", #000, #fff) !default;
 
 // The $mdc-theme-accent variable is DEPRECATED - it exists purely for backward compatibility.
 // The $mdc-theme-secondary* variables should be used for all new projects.
-$accent: #018786 !default; // baseline teal, 600 tone
+$accent: #ffc107 !default; // baseline amber, 500 tone
 $secondary: $accent !default;
 $on-secondary: if(functions.contrast-tone($secondary) == "dark", #000, #fff) !default;
-$background: #fff !default; // White
+
+$tertiary: #536dfe !default; // baseline indigo, a200 tone
+$on-tertiary: if(functions.contrast-tone($tertiary) == "dark", #000, #fff) !default;
+
+$background: #fafafa !default; // baseline grey, 50 tone
+$border-color: #e0e0e0 !default; // baseline grey, 300 tone
 
 $surface: #fff !default;
 $on-surface: if(functions.contrast-tone($surface) == "dark", #000, #fff) !default;
@@ -54,6 +60,7 @@ $text-colors: (
   dark: (
     primary: rgba(black, .87),
     secondary: rgba(black, .54),
+    tertiary: rgba(black, .87),
     hint: rgba(black, .38),
     disabled: rgba(black, .38),
     icon: rgba(black, .38)
@@ -61,6 +68,7 @@ $text-colors: (
   light: (
     primary: white,
     secondary: rgba(white, .7),
+    tertiary: white,
     hint: rgba(white, .5),
     disabled: rgba(white, .5),
     icon: rgba(white, .5)
@@ -70,7 +78,7 @@ $text-colors: (
 $text-emphasis: (
   high: .87,
   medium: .6,
-  disabled: .38,
+  disabled: .12,
 ) !default;
 
 @function ink-color-for-fill_($text-style, $fill-color) {
@@ -88,34 +96,67 @@ $property-values: (
   primary: $primary,
   // Secondary
   secondary: $secondary,
+  // Tertiary
+  tertiary: $tertiary,
   // Background
   background: $background,
+  // Border Color
+  border-color: $border-color,
   // Surface
   surface: $surface,
   // Error
   error: $error,
   on-primary: $on-primary,
   on-secondary: $on-secondary,
+  on-tertiary: $on-tertiary,
   on-surface: $on-surface,
   on-error: $on-error,
   // Text-primary on "background" background
   text-primary-on-background: ink-color-for-fill_(primary, $background),
   text-secondary-on-background: ink-color-for-fill_(secondary, $background),
+  text-tertiary-on-background: ink-color-for-fill_(tertiary, $background),
   text-hint-on-background: ink-color-for-fill_(hint, $background),
   text-disabled-on-background: ink-color-for-fill_(disabled, $background),
   text-icon-on-background: ink-color-for-fill_(icon, $background),
   // Text-primary on "light" background
   text-primary-on-light: ink-color-for-fill_(primary, light),
   text-secondary-on-light: ink-color-for-fill_(secondary, light),
+  text-tertiary-on-light: ink-color-for-fill_(tertiary, light),
   text-hint-on-light: ink-color-for-fill_(hint, light),
   text-disabled-on-light: ink-color-for-fill_(disabled, light),
   text-icon-on-light: ink-color-for-fill_(icon, light),
   // Text-primary on "dark" background
   text-primary-on-dark: ink-color-for-fill_(primary, dark),
   text-secondary-on-dark: ink-color-for-fill_(secondary, dark),
+  text-tertiary-on-dark: ink-color-for-fill_(tertiary, dark),
   text-hint-on-dark: ink-color-for-fill_(hint, dark),
   text-disabled-on-dark: ink-color-for-fill_(disabled, dark),
-  text-icon-on-dark: ink-color-for-fill_(icon, dark)
+  text-icon-on-dark: ink-color-for-fill_(icon, dark),
+  // Status
+  success: status-palette.$success,
+  success-text: status-palette.$success-text,
+  warning: status-palette.$warning,
+  warning-text: status-palette.$warning-text,
+  danger: status-palette.$danger,
+  danger-text: status-palette.$danger-text,
+  info-primary: status-palette.$info-primary,
+  info-primary-text: status-palette.$info-primary-text,
+  info-secondary: status-palette.$info-secondary,
+  info-secondary-text: status-palette.$info-secondary-text,
+  info: status-palette.$info,
+  // Status muted
+  success-muted: status-palette.$success-muted,
+  success-text-muted: status-palette.$success-text-muted,
+  warning-muted: status-palette.$warning-muted,
+  warning-text-muted: status-palette.$warning-text-muted,
+  danger-muted: status-palette.$danger-muted,
+  danger-text-muted: status-palette.$danger-text-muted,
+  info-primary-muted: status-palette.$info-primary-muted,
+  info-primary-text-muted: status-palette.$info-primary-text-muted,
+  info-secondary-muted: status-palette.$info-secondary-muted,
+  info-secondary-text-muted: status-palette.$info-secondary-text-muted,
+  // Refactor
+  // popup-elevation: 
 ) !default;
 
 // If `$style` is a color (a literal color value, `currentColor`, or a CSS custom property), it is returned verbatim.

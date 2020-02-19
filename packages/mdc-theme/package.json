@@ -1,5 +1,5 @@
 {
-  "name": "@material/theme",
+  "name": "@tyler-forge/theme",
   "description": "The Material Components for the web theming system",
   "version": "5.0.0",
   "license": "MIT",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web.git",
+    "url": "https://github.com/tyler-technologies/material-components-web.git",
     "directory": "packages/mdc-theme"
   },
   "dependencies": {
