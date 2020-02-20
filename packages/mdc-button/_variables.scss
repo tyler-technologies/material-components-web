@@ -21,7 +21,7 @@
 //
 
 @use "@material/density/variables" as density-variables;
-@use "@material/theme/variables" as theme-variables; // for mdc-theme-prop-value
+@use "@tyler-forge/theme/variables" as theme-variables; // for mdc-theme-prop-value
 
 $height: 36px !default;
 $horizontal-padding: 8px !default;
@@ -39,7 +39,7 @@ $density-config: (
 ) !default;
 
 $outlined-border-width: 1px !default;
-$outline-color: rgba(theme-variables.prop-value(primary), .12) !default;
+$outline-color: theme-variables.prop-value(primary) !default;
 $shape-radius: small !default;
 
 $disabled-container-color: rgba(theme-variables.prop-value(on-surface), .12) !default;
