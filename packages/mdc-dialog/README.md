@@ -32,7 +32,7 @@ Dialogs inform users about a task and can contain critical information, require 
 ## Installation
 
 ```
-npm install @material/dialog
+npm install @tyler-forge/dialog
 ```
 
 ## Basic Usage

@@ -159,6 +159,25 @@ $property-values: (
   // popup-elevation: 
 ) !default;
 
+$z-index-surface: 1 !default;
+$z-index-header: 4 !default;
+$z-index-backdrop: 7 !default;
+$z-index-dialog: 8 !default;
+$z-index-notification: 9 !default;
+$z-index-popup: 10 !default;
+$z-index-tooltip: 11 !default;
+
+$z-index-values: (
+  surface: $z-index-surface,
+  header: $z-index-header,
+  backdrop: $z-index-backdrop,
+  dialog: $z-index-dialog,
+  notification: $z-index-notification,
+  popup: $z-index-popup,
+  tooltip: $z-index-tooltip
+) !default;
+
+
 // If `$style` is a color (a literal color value, `currentColor`, or a CSS custom property), it is returned verbatim.
 // Otherwise, `$style` is treated as a theme property name, and the corresponding value from
 // `$mdc-theme-property-values` is returned. If this also fails, an error is thrown.

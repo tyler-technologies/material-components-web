@@ -25,7 +25,7 @@ The MDC Navigation Drawer is used to organize access to destinations and other f
 ## Installation
 
 ```
-npm install @material/drawer
+npm install @tyler-forge/drawer
 ```
 
 ### HTML Structure

@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 //
 
-@use "@material/theme/variables";
+@use "@tyler-forge/theme/variables";
 
 // Colors
 $title-ink-color: variables.prop-value(on-surface) !default;
@@ -52,5 +52,5 @@ $animation-exit: 200ms !default;
 $modal-scrim-color: variables.prop-value(on-surface) !default;
 $modal-scrim-opacity: .32 !default;
 
-$z-index: 6 !default;
+$z-index: 8 !default;
 $modal-elevation: 16 !default;

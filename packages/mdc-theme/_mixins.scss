@@ -37,6 +37,8 @@
     }
   }
 
+  @include z-index-root-styles();
+
   @each $style in map.keys(variables.$property-values) {
     @if $style != "background" and $style != "surface" {
       .mdc-theme--#{$style} {
@@ -85,4 +87,32 @@
     /* @alternate */
     #{$property}: var(--mdc-theme-#{$style}, $value) #{$important-rule};
   }
+}
+
+@mixin z-index($type, $customPropName: null) {
+  @if not map-has-key(variables.$z-index-values, $type) {
+    @error "Invalid type: '#{$type}'. Choose one of: #{map-keys(variables.$z-index-values)}";
+  }
+
+  $value: map-get(variables.$z-index-values, $type);
+
+  @if $customPropName == null {
+    $customPropName: --mdc-z-index-#{$type};
+  }
+
+  @include css-custom-property(z-index, $customPropName, $value);
+}
+
+@mixin z-index-root-styles() {
+  :root {
+    @each $type in map-keys(variables.$z-index-values) {
+      --mdc-z-index-#{$type}: #{map-get(variables.$z-index-values, $type)};
+    }
+  }
+}
+
+/// Allow for setting a custom css property with a fallback property value
+@mixin css-custom-property($style, $variableName, $defaultValue) {
+  #{$style}: $defaultValue;
+  #{$style}: var(#{$variableName}, $defaultValue);
 }

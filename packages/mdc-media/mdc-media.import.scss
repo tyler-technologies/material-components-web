@@ -1,0 +1,4 @@
+// @forward "variables" as mdc-media-*;
+// @forward "mixins" as mdc-* hide mdc-breakpoint-min, mdc-breakpoint-max;
+// @forward "mixins" as mdc-media-* hide mdc-media-media-min, mdc-media-media-max;
+@forward "mdc-media";
