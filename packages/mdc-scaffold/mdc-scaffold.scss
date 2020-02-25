@@ -1,0 +1,6 @@
+@use "./mixins";
+@include mixins.core-styles;
+
+.mdc-scaffold-host {
+  @include mixins.host;
+}

@@ -28,6 +28,10 @@ export const cssClasses = {
   SCROLLABLE: 'mdc-dialog--scrollable',
   SCROLL_LOCK: 'mdc-dialog-scroll-lock',
   STACKED: 'mdc-dialog--stacked',
+  // @DerekMoss: we should reconsider why we are using fullscreen.
+  // a page component is the same thing and this defeats the purpose of dialog
+  // which is to have context from the scrim area.
+  FULLSCREEN: 'mdc-dialog--fullscreen',
 };
 
 export const strings = {

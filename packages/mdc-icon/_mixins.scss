@@ -1,0 +1,53 @@
+@mixin core-styles {
+  @font-face {
+    @include font-face;
+  }
+  
+  .tyler-icons {
+    @include icon;
+
+    &.tyler-icons--dense {
+      font-size: 20px;
+    }
+  }
+}
+
+@mixin icon ($icon-name: null) {
+  @include base();
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+
+  @if $icon-name != null {
+    &::before {
+      content: '#{$icon-name}';
+    }
+  }
+}
+
+@mixin font-face {
+  font-family: 'TylerIcons';
+  src:
+    url('https://cdn.forge.tylertech.com/v1/fonts/TylerIcons.woff2?yucxgu') format('woff2'),
+    url('https://cdn.forge.tylertech.com/v1/fonts/TylerIcons.ttf?yucxgu') format('truetype'),
+    url('https://cdn.forge.tylertech.com/v1/fonts/TylerIcons.woff?yucxgu') format('woff'),
+    url('https://cdn.forge.tylertech.com/v1/fonts/TylerIcons.svg?yucxgu#TylerIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@mixin base() {
+  font-family: 'TylerIcons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+}

@@ -27,14 +27,12 @@
 @use "./variables";
 
 @mixin core-styles($query: functions.all()) {
-  .mdc-typography,
-  .tyl-typography {
+  .mdc-typography {
     @include base($query: $query);
   }
 
   @each $style in map.keys(variables.$styles) {
-    .mdc-typography--#{$style},
-    .tyl-typography--#{$style} {
+    .mdc-typography--#{$style} {
       @include typography($style, $query: $query);
     }
   }

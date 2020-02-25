@@ -73,8 +73,7 @@ $ripple-target: ".mdc-button__ripple";
     // class, which is loaded separately so the order of CSS definitions is not
     // guaranteed. Therefore, increase specifity by nesting this class to ensure
     // overrides apply.
-    .mdc-button__icon,
-    .tyl-button__icon {
+    .mdc-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         @include icon_;
       }
@@ -88,16 +87,14 @@ $ripple-target: ".mdc-button__ripple";
     @include disabled-ink-color(variables.$disabled-ink-color, $query);
   }
 
-  .mdc-button__label + .mdc-button__icon,
-  .mdc-button__label + .tyl-button__icon {
+  .mdc-button__label + .mdc-button__icon {
     @include feature-targeting-mixins.targets($feat-structure) {
       @include icon-trailing_;
     }
   }
 
   // stylelint-disable-next-line selector-no-qualifying-type
-  svg.mdc-button__icon,
-  svg.tyl-button__icon {
+  svg.mdc-button__icon {
     @include feature-targeting-mixins.targets($feat-structure) {
       @include icon-svg_;
     }
@@ -106,16 +103,14 @@ $ripple-target: ".mdc-button__ripple";
   .mdc-button--raised,
   .mdc-button--unelevated,
   .mdc-button--outlined {
-    .mdc-button__icon,
-    .tyl-button__icon {
+    .mdc-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         // Icons inside contained buttons have different styles due to increased button padding
         @include icon-contained_;
       }
     }
 
-    .mdc-button__label + .mdc-button__icon,
-    .mdc-button__label + .tyl-button__icon {
+    .mdc-button__label + .mdc-button__icon {
       @include feature-targeting-mixins.targets($feat-structure) {
         @include icon-contained-trailing_;
       }
@@ -569,8 +564,7 @@ $query: feature-targeting-functions.all()) {
 @mixin icon-color_($color, $query: feature-targeting-functions.all()) {
   $feat-color: feature-targeting-functions.create-target($query, color);
 
-  .mdc-button__icon,
-  .tyl-button__icon {
+  .mdc-button__icon {
     @include feature-targeting-mixins.targets($feat-color) {
       @include theme-mixins.prop(color, $color);
     }

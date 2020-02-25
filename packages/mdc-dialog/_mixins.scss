@@ -123,9 +123,17 @@
     }
   }
 
+  .mdc-dialog__header {
+    @include feature-targeting-mixins.targets($feat-structure) {
+      margin: 0;
+      padding: 0 24px variables.$title-bottom-padding;
+      border-bottom: 1px solid transparent;
+    }
+  }
+
   .mdc-dialog__title {
     @include typography-mixins.baseline-top(40px, $query: $query);
-    @include typography-mixins.typography(headline6, $query: $query);
+    @include typography-mixins.typography(title, $query: $query);
 
     @include feature-targeting-mixins.targets($feat-structure) {
       display: block;
@@ -156,6 +164,8 @@
     @include typography-mixins.typography(body1, $query: $query);
 
     @include feature-targeting-mixins.targets($feat-structure) {
+      // @DerekMoss: why this specific max-height?
+      max-height: variables.$scrollable-max-height;
       flex-grow: 1;
       box-sizing: border-box;
       margin: 0;
@@ -180,6 +190,7 @@
   }
 
   // stylelint-disable-next-line plugin/selector-bem-pattern
+  .mdc-dialog__header + .mdc-dialog__content,
   .mdc-dialog__title + .mdc-dialog__content {
     @include feature-targeting-mixins.targets($feat-structure) {
       // Eliminate padding to bring as close to spec as possible, relying on title padding.
@@ -327,6 +338,18 @@
       overflow: hidden;
     }
   }
+
+  .mdc-dialog--fullscreen {
+    padding: 0;
+
+    .mdc-dialog__surface {
+      height: 100%;
+      width: 100%;
+      min-width: auto;
+      max-width: 100%;
+      border-radius: 0;
+    }
+  }
 }
 
 @mixin container-fill-color($color, $query: feature-targeting-functions.all()) {
@@ -376,6 +399,8 @@
 ) {
   $feat-color: feature-targeting-functions.create-target($query, color);
 
+
+  &.mdc-dialog--scrollable .mdc-dialog__header,
   &.mdc-dialog--scrollable .mdc-dialog__title,
   &.mdc-dialog--scrollable .mdc-dialog__actions {
     @include feature-targeting-mixins.targets($feat-color) {
@@ -397,7 +422,7 @@
 
   .mdc-dialog__surface {
     @include feature-targeting-mixins.targets($feat-structure) {
-      min-width: $min-width;
+      @include theme-mixins.css-custom-property(min-width, --mdc-dialog-min-width, variables.$min-width);
     }
   }
 }
@@ -421,7 +446,7 @@
           max-width: $max-width;
         }
       } @else {
-        max-width: $max-size-calc-expr;
+        @include theme-mixins.css-custom-property(max-width, --mdc-dialog-max-width, $max-width-breakpoint);
       }
     }
   }
@@ -446,7 +471,7 @@
           max-height: $max-height;
         }
       } @else {
-        max-height: $max-size-calc-expr;
+        @include theme-mixins.css-custom-property(max-height, --mdc-dialog-max-height, $max-size-calc-expr);
       }
     }
   }
@@ -498,4 +523,17 @@
       }
     }
   }
+}
+
+
+@mixin position-abs-zero() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin fullscreen() {
+  padding: 0;
 }

@@ -1,0 +1,20 @@
+{
+  "name": "@tyler-forge/scaffold",
+  "description": "The Material Components for the web scaffold layout",
+  "version": "5.0.0",
+  "license": "MIT",
+  "keywords": [
+    "material components",
+    "material design",
+    "scaffold",
+    "layout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyler-technologies/material-components-web.git",
+    "directory": "packages/mdc-scaffold"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
