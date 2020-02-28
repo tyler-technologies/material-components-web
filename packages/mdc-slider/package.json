@@ -1,5 +1,5 @@
 {
-  "name": "@tyler-forge/slider",
+  "name": "@tyler-material/slider",
   "version": "5.0.0",
   "description": "The Material Components for the web slider component",
   "main": "dist/mdc.slider.js",
@@ -26,8 +26,8 @@
     "@material/dom": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
     "@material/rtl": "^5.0.0",
-    "@tyler-forge/theme": "^5.0.0",
-    "@tyler-forge/typography": "^5.0.0",
+    "@tyler-material/theme": "^5.0.0",
+    "@tyler-material/typography": "^5.0.0",
     "tslib": "^1.9.3"
   }
 }

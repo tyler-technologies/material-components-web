@@ -1,5 +1,5 @@
 {
-  "name": "@tyler-forge/elevation",
+  "name": "@tyler-material/elevation",
   "description": "Material Components for the web mixins + CSS Classes for Material Design elevation",
   "version": "5.0.0",
   "license": "MIT",
@@ -17,6 +17,6 @@
     "@material/animation": "^5.0.0",
     "@material/base": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
-    "@tyler-forge/theme": "^5.0.0"
+    "@tyler-material/theme": "^5.0.0"
   }
 }

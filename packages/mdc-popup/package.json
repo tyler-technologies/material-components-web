@@ -1,5 +1,5 @@
 {
-  "name": "@tyler-forge/popup",
+  "name": "@tyler-material/popup",
   "description": "The Material Components for the web popup component",
   "version": "5.0.0",
   "license": "MIT",
@@ -21,11 +21,11 @@
 
     "@material/animation": "^5.0.0",
     "@material/base": "^5.0.0",
-    "@tyler-forge/elevation": "^5.0.0",
+    "@tyler-material/elevation": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
     "@material/rtl": "^5.0.0",
     "@material/shape": "^5.0.0",
-    "@tyler-forge/theme": "^5.0.0",
+    "@tyler-material/theme": "^5.0.0",
     "tslib": "^1.9.3"
   }
 }

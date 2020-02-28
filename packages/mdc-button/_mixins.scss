@@ -21,20 +21,20 @@
 //
 
 @use "sass:math";
-@use "@tyler-forge/elevation/mixins" as elevation-mixins;
+@use "@tyler-material/elevation/mixins" as elevation-mixins;
 @use "@material/feature-targeting/functions" as feature-targeting-functions;
 @use "@material/feature-targeting/mixins" as feature-targeting-mixins;
 @use "@material/ripple/mixins" as ripple-mixins;
 @use "@material/rtl/mixins" as rtl-mixins;
-@use "@tyler-forge/theme/functions" as theme-functions;
-@use "@tyler-forge/theme/mixins" as theme-mixins;
+@use "@tyler-material/theme/functions" as theme-functions;
+@use "@tyler-material/theme/mixins" as theme-mixins;
 @use "@material/touch-target/mixins" as touch-target-mixins;
-@use "@tyler-forge/typography/mixins" as typography-mixins;
+@use "@tyler-material/typography/mixins" as typography-mixins;
 @use "@material/shape/mixins" as shape-mixins;
 @use "@material/shape/functions" as shape-functions;
 @use "@material/density/functions" as density-functions;
 @use "./variables";
-@use "@tyler-forge/elevation/functions" as elevation-functions;
+@use "@tyler-material/elevation/functions" as elevation-functions;
 
 $ripple-target: ".mdc-button__ripple";
 

@@ -14,7 +14,7 @@ MDC Media provides commonly-used media sizes.
 ## Installation
 
 ```
-npm install @tyler-forge/media
+npm install @tyler-material/media
 ```
 
 ## Usage

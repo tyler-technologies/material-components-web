@@ -13,7 +13,7 @@ Material design’s responsive UI is based on a column-variate grid layout. It h
 ## Installation
 
 ```
-npm install @tyler-forge/scaffold
+npm install @tyler-material/scaffold
 ```
 
 ## Usage
@@ -39,4 +39,4 @@ npm install @tyler-forge/scaffold
 ### Styles
 
 ```scss
-@import "@tyler-forge/scaffold/mdc-scaffold";
+@import "@tyler-material/scaffold/mdc-scaffold";

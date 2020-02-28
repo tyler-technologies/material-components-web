@@ -4,7 +4,7 @@ Tyler icons and styles extend Material Design's icons to add business context.
 ## Installation
 
 ```
-npm install @tyler-forge/icon
+npm install @tyler-material/icon
 ```
 
 ## Usage
@@ -12,5 +12,5 @@ npm install @tyler-forge/icon
 ### Styles
 
 ```scss
-@import "@tyler-forge/scaffold/mixins";
+@import "@tyler-material/scaffold/mixins";
 ```

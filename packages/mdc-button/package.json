@@ -1,5 +1,5 @@
 {
-  "name": "@tyler-forge/button",
+  "name": "@tyler-material/button",
   "description": "The Material Components for the web button component",
   "version": "5.0.0",
   "license": "MIT",
@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "@material/density": "^5.0.0",
-    "@tyler-forge/elevation": "^5.0.0",
+    "@tyler-material/elevation": "^5.0.0",
     "@material/feature-targeting": "^5.0.0",
     "@material/ripple": "^5.0.0",
     "@material/rtl": "^5.0.0",
     "@material/shape": "^5.0.0",
-    "@tyler-forge/theme": "^5.0.0",
+    "@tyler-material/theme": "^5.0.0",
     "@material/touch-target": "^5.0.0",
     "@material/typography": "^5.0.0"
   }

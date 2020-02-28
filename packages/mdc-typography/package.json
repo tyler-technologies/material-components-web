@@ -1,5 +1,5 @@
 {
-  "name": "@tyler-forge/typography",
+  "name": "@tyler-material/typography",
   "description": "Typography classes, mixins, and variables for Tyler Forge Components for the web",
   "version": "5.0.0",
   "license": "MIT",

@@ -22,7 +22,7 @@ The Material Design color system can be used to create a color scheme that refle
 ## Installation
 
 ```
-npm install @tyler-forge/theme
+npm install @tyler-material/theme
 ```
 
 ## Usage
